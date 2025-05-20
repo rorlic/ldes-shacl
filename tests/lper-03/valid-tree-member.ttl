@@ -1,6 +1,5 @@
 @prefix tree: <https://w3id.org/tree#> .
 @prefix ex:   <http://example.org/> .
-@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix ldes: <https://w3id.org/ldes#>.
 
 ex:EventStream1 a ldes:EventStream ;
