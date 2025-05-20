@@ -36,7 +36,7 @@ tree:CollectionMemberNodeKindShape sh:deactivated true .
 
 ldes:EventStreamShape a sh:NodeShape;
   sh:targetClass ldes:EventStream ;
-  sh:property ldes:EventStreamMemberNodeKindShape .
+  sh:property ldes:EventStreamMemberNodeKindShape, ldes:EventStreamShapeRecommendedShape .
 
 ldes:EventStreamMemberNodeKindShape a sh:PropertyShape;
   sh:path tree:member;
@@ -44,3 +44,13 @@ ldes:EventStreamMemberNodeKindShape a sh:PropertyShape;
   sh:name "Tree member";
   sh:description "Links to the collection’s items that are the sh:targetNodes of the SHACL shape defined with tree:shape";
   sh:message "LPER-03 (tree:member usage) - an event stream MUST refer using its tree:member property to a member's focus node (by a named node)" .
+
+tree:CollectionShapeSuggestedShape sh:deactivated true .
+
+ldes:EventStreamShapeRecommendedShape a sh:PropertyShape;
+  sh:path tree:shape;
+  sh:minCount 1;
+  sh:name "Tree (shacl) shape";
+  sh:description "The SHACL shape the members of the collection adhere to";
+  sh:severity sh:Warning;
+  sh:message "LPER-04 (tree:shape usage) - an event stream SHOULD refer using its tree:shape property to a shape defining its members" .
