@@ -1,0 +1,6 @@
+@prefix tree: <https://w3id.org/tree#> .
+@prefix ex:   <http://example.org/> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix ldes: <https://w3id.org/ldes#> .
+
+ex:EventStream1 a ldes:EventStream ; tree:shape [a sh:NodeShape] ; tree:member ex:Member1 .

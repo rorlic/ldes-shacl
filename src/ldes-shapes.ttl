@@ -1,0 +1,33 @@
+@prefix ldes: <https://w3id.org/ldes#>.
+@prefix tree: <https://w3id.org/tree#>.
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+ldes: owl:imports <https://w3id.org/ldes#Vocabulary> .
+
+tree:CollectionTypeRequiredShape sh:deactivated true .
+
+ldes:EventStreamTypeShape a sh:NodeShape;
+	sh:targetNode ldes:EventStream ;
+  sh:property ldes:EventStreamTypeRequiredShape.
+
+ldes:EventStreamTypeRequiredShape a sh:PropertyShape;
+  sh:path [ sh:inversePath rdf:type ] ;
+  sh:minCount 1; 
+  sh:maxCount 1 ;
+  sh:name "ldes:EventStream count";
+  sh:message "LPER-01 (contains ldes:EventStream) - an event stream MUST be a ldes:EventStream" .
+
+ldes:EventStreamDoubleTypeShape a sh:NodeShape;
+  sh:targetClass ldes:EventStream ;
+  sh:severity sh:Warning;
+  sh:not ldes:CollectionTypeSpecifiedShape.
+
+ldes:CollectionTypeSpecifiedShape a sh:PropertyShape;
+  sh:path rdf:type ;
+  sh:hasValue tree:Collection; 
+  sh:name "ldes:EventStream double-typed";
+  sh:message "LPER-02 (not double-typed) - an event stream SHOULD NOT be double typed with tree:Collection (as this is implied)" .
