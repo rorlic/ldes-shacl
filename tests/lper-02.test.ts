@@ -3,7 +3,7 @@ import {
   validateFile, createValidator, expectWarning, 
 } from './utilities';
 
-describe('Test LPER-01 (contains ldes:EventStream)', async () => {
+describe('Test LPER-02 (not double-typed)', async () => {
   const validator = await createValidator(['ldes-shapes.ttl']);
   const nodeShape = 'https://w3id.org/ldes#EventStreamDoubleTypeShape';
   const focusNode = 'http://example.org/EventStream1';
