@@ -31,3 +31,16 @@ ldes:CollectionTypeSpecifiedShape a sh:PropertyShape;
   sh:hasValue tree:Collection; 
   sh:name "ldes:EventStream double-typed";
   sh:message "LPER-02 (not double-typed) - an event stream SHOULD NOT be double typed with tree:Collection (as this is implied)" .
+
+tree:CollectionMemberNodeKindShape sh:deactivated true .
+
+ldes:EventStreamShape a sh:NodeShape;
+  sh:targetClass ldes:EventStream ;
+  sh:property ldes:EventStreamMemberNodeKindShape .
+
+ldes:EventStreamMemberNodeKindShape a sh:PropertyShape;
+  sh:path tree:member;
+  sh:nodeKind sh:IRI;
+  sh:name "Tree member";
+  sh:description "Links to the collection’s items that are the sh:targetNodes of the SHACL shape defined with tree:shape";
+  sh:message "LPER-03 (tree:member usage) - an event stream MUST refer using its tree:member property to a member's focus node (by a named node)" .
