@@ -13,17 +13,17 @@ describe('Test LPER-06 (ldes:versionOfPath usage)', async () => {
 
   it('may have zero ldes:versionOfPath predicates', async () => {
     expectInfo({ sourceShape: versionOfPathSuggested, path: ldesVersionOfPath, focusNode: exampleCollection } as ExpectedResult, 
-      await validateFile('./tests/lper-06/no-ldes-versionOf.ttl', validator));
+      await validateFile('./tests/lper-06/no-ldes-versionOfPath.ttl', validator));
   });
 
   it('may have a single ldes:versionOfPath predicate', async () => {
-    const report = await validateFile('./tests/lper-06/single-ldes-versionOf.ttl', validator)
+    const report = await validateFile('./tests/lper-06/single-ldes-versionOfPath.ttl', validator)
     expectNoResult(versionOfPathSuggested, report);
   });
 
   it('must not have multiple tree:Collection entities', async () => {
     expectViolation({ sourceShape: versionOfPathLimited, focusNode: exampleCollection, constraint: maxCountConstraint } as ExpectedResult,
-      await validateFile('./tests/lper-06/multiple-ldes-versionOf.ttl', validator));
+      await validateFile('./tests/lper-06/multiple-ldes-versionOfPath.ttl', validator));
   });
 
 });
