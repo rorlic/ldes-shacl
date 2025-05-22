@@ -57,7 +57,7 @@ npm test
 4. if the event stream has a `ldes:timestampPath` and a retention policy of type `ldes:DurationAgoPolicy` does not override it, the retention policy MUST use the event stream `ldes:timestampPath` property to determine the member's timestamp value
 
 #### Version-based Retention Policies (LPRR-VB)
-1. a retention policy of type `ldes:LatestVersionSubset` MAY include a `ldes:amount` property of type `xsd:positiveInteger` to specify the number of most recent members to keep, based on `ldes:timestampPath` for sorting all members with the same `ldes:versionOfPath`
+1. a retention policy of type `ldes:LatestVersionSubset` MAY include a `ldes:amount` property of type `xsd:integer` (greater than or equal to 1) to specify the number of most recent members to keep, based on `ldes:timestampPath` for sorting all members with the same `ldes:versionOfPath`
 2. if a retention policy of type `ldes:LatestVersionSubset` does not include a `ldes:amount` property, it MUST default to `1`
 3. if the event stream has a `ldes:timestampPath`, a retention policy of type `ldes:LatestVersionSubset` MAY include a `ldes:timestampPath` property to override which member property to use for the timestamp to sort members
 4. if the event stream does not have a `ldes:timestampPath`, a retention policy of type `ldes:LatestVersionSubset` MUST include a `ldes:timestampPath` property to determine which member property to use for the timestamp to sort members
