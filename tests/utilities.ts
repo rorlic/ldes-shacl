@@ -56,7 +56,14 @@ enum Severity {
   information = 'http://www.w3.org/ns/shacl#Info',
 }
 
+// function logResult(report: ValidationReport) {
+//   console.log(report.results.map((x: ValidationResult) => (
+//     {severity: x.severity.value, source: x.sourceShape?.value, node: x.focusNode?.value, path: x.path, value: x.value?.value, constraint: x.sourceConstraintComponent?.value}
+//   )))
+// }
+
 export function expectViolation(expectedResult: ExpectedResult, report: ValidationReport, count: number = 1) {
+// logResult(report);
   expectValidationResult(Severity.violation, expectedResult, report, count);
 }
 
@@ -69,21 +76,26 @@ export function expectInfo(expectedResult: ExpectedResult, report: ValidationRep
 }
 
 export function expectNoViolation(sourceShape: string, report: ValidationReport) {
-  const violations = report.results.filter((x: ValidationResult) =>
+  const results = report.results.filter((x: ValidationResult) =>
     x.severity.equals(rdf.namedNode(Severity.violation)) && x.sourceShape.equals(rdf.namedNode(sourceShape)));
-  assert.isEmpty(violations);
+  assert.isEmpty(results);
 }
 
 export function expectNoWarning(sourceShape: string, report: ValidationReport) {
-  const violations = report.results.filter((x: ValidationResult) =>
+  const results = report.results.filter((x: ValidationResult) =>
     x.severity.equals(rdf.namedNode(Severity.warning)) && x.sourceShape.equals(rdf.namedNode(sourceShape)));
-  assert.isEmpty(violations);
+  assert.isEmpty(results);
 }
 
 export function expectNoInfo(sourceShape: string, report: ValidationReport) {
-  const violations = report.results.filter((x: ValidationResult) =>
+  const results = report.results.filter((x: ValidationResult) =>
     x.severity.equals(rdf.namedNode(Severity.information)) && x.sourceShape.equals(rdf.namedNode(sourceShape)));
-  assert.isEmpty(violations);
+  assert.isEmpty(results);
+}
+
+export function expectNoResult(sourceShape: string, report: ValidationReport) {
+  const results = report.results.filter((x: ValidationResult) => x.sourceShape.equals(rdf.namedNode(sourceShape)));
+  assert.isEmpty(results);
 }
 
 export function expectMissingEntityViolation(sourceShape: string, report: ValidationReport) {
