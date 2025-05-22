@@ -1,7 +1,7 @@
 # LDES specification SHACL
 > This repository is still _work in progress_ and needs to be approved and accepted by the **TODO** group, so use at your own risk.
 >
-> Currently the shapes cover only the requirements in **bold** (that is, the part that can be validates with shapes).
+> Currently the shapes cover only the requirements in **bold** (that is, the part that can be validated with shapes).
 
 In order to be compliant with the [LDES specification](https://w3id.org/ldes/specification) a producer MUST also be compliant with the [TREE hypermedia specification](https://treecg.github.io/specification/) on which LDES is based. 
 
