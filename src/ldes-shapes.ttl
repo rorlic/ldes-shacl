@@ -88,4 +88,4 @@ ldes:EventStreamTimestampPathLimitedShape a sh:PropertyShape;
   sh:severity sh:Violation;
   sh:name "LDES timestampPath";
   sh:description "The path to the xsd:dateTime literal in each member that defines the order of the event stream";
-  sh:message "LPER-07 (ldes:timestampPath usage) - an event stream MUST NOT include multiple ldes:timestampPath property to specify a property path, which when applied to a member, yields a xsd:dateTime value" .
+  sh:message "LPER-07 (ldes:timestampPath usage) - an event stream MUST NOT include multiple ldes:timestampPath properties" .
