@@ -21,7 +21,7 @@ describe('Test LPER-07 (ldes:timestampPath usage)', async () => {
     expectNoResult(timestampPathSuggested, report);
   });
 
-  it('must not have multiple tree:Collection entities', async () => {
+  it('must not have multiple ldes:timestampPath predicates', async () => {
     expectViolation({ sourceShape: timestampPathLimited, focusNode: exampleCollection, constraint: maxCountConstraint } as ExpectedResult,
       await validateFile('./tests/lper-07/multiple-ldes-timestampPath.ttl', validator));
   });
