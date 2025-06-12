@@ -5,7 +5,7 @@ import {
 import { maxCountConstraint } from './constraints';
 
 describe('Test LPER-07 (ldes:timestampPath usage)', async () => {
-  const validator = await createValidator(['ldes-shapes.ttl']);
+  const validator = await createValidator(['ldes-common.ttl', 'ldes-LPER-07-ldes-timestampPath-usage.ttl']);
   const timestampPathSuggested = 'https://w3id.org/ldes#EventStreamTimestampPathSuggestedShape';
   const timestampPathLimited = 'https://w3id.org/ldes#EventStreamTimestampPathLimitedShape';
   const ldesTimestampPath = 'https://w3id.org/ldes#timestampPath';

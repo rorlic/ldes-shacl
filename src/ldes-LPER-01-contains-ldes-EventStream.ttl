@@ -1,0 +1,21 @@
+@prefix ldes: <https://w3id.org/ldes#>.
+@prefix tree: <https://w3id.org/tree#>.
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+tree:CollectionTypeRequiredShape sh:deactivated true .
+
+ldes:EventStreamTypeShape a sh:NodeShape;
+	sh:targetNode ldes:EventStream ;
+  rdfs:label "EventStream shape"@en ;
+  rdfs:comment "A shape ensuring that an ldes:EventStream appears only once in a well-formed LDES page."@en ;
+  sh:property ldes:EventStreamTypeRequiredShape.
+  
+ldes:EventStreamTypeRequiredShape a sh:PropertyShape;
+  sh:path [ sh:inversePath rdf:type ] ;
+  sh:minCount 1; 
+  sh:maxCount 1 ;
+  sh:name "LDES count";
+  sh:description "A shape to validate that an ldes:EventStream only appears once in a LDES page.";
+  sh:message "LPER-01 (contains ldes:EventStream) - an event stream MUST be a ldes:EventStream" .

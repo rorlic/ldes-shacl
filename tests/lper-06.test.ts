@@ -5,7 +5,7 @@ import {
 import { maxCountConstraint } from './constraints';
 
 describe('Test LPER-06 (ldes:versionOfPath usage)', async () => {
-  const validator = await createValidator(['ldes-shapes.ttl']);
+  const validator = await createValidator(['ldes-common.ttl', 'ldes-LPER-06-ldes-versionOfPath-usage.ttl']);
   const versionOfPathSuggested = 'https://w3id.org/ldes#EventStreamVersionOfPathSuggestedShape';
   const versionOfPathLimited = 'https://w3id.org/ldes#EventStreamVersionOfPathLimitedShape';
   const ldesVersionOfPath = 'https://w3id.org/ldes#versionOfPath';

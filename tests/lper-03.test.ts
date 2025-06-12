@@ -4,7 +4,7 @@ import {
 } from './utilities';
 
 describe('Test LPER-03 (tree:member usage)', async () => {
-  const validator = await createValidator(['ldes-shapes.ttl']);
+  const validator = await createValidator(['ldes-common.ttl', 'ldes-LPER-03-tree-member-usage.ttl']);
   const nodeShape = 'https://w3id.org/ldes#EventStreamMemberNodeKindShape';
   const focusNode = 'http://example.org/EventStream1';
 

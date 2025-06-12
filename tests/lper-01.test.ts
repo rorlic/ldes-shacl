@@ -5,7 +5,7 @@ import {
 } from './utilities';
 
 describe('Test LPER-01 (contains ldes:EventStream)', async () => {
-  const validator = await createValidator(['ldes-shapes.ttl']);
+  const validator = await createValidator(['ldes-common.ttl', 'ldes-LPER-01-contains-ldes-EventStream.ttl']);
   const nodeShape = 'https://w3id.org/ldes#EventStreamTypeRequiredShape';
   const focusNode = 'https://w3id.org/ldes#EventStream';
 

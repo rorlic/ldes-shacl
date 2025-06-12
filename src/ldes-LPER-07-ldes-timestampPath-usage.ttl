@@ -1,0 +1,20 @@
+@prefix ldes: <https://w3id.org/ldes#>.
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+
+ldes:EventClassStreamShape sh:property ldes:EventStreamTimestampPathSuggestedShape, ldes:EventStreamTimestampPathLimitedShape .
+
+ldes:EventStreamTimestampPathSuggestedShape a sh:PropertyShape;
+  sh:path ldes:timestampPath;
+  sh:minCount 1;
+  sh:name "LDES timestampPath";
+  sh:description "The path to the xsd:dateTime literal in each member that defines the order of the event stream";
+  sh:severity sh:Info;
+  sh:message "LPER-07 (ldes:timestampPath usage) - an event stream MAY include a ldes:timestampPath property to specify a property path, which when applied to a member, yields a xsd:dateTime value that can be used for comparing and ordering all the versions of the same non-version object" .
+
+ldes:EventStreamTimestampPathLimitedShape a sh:PropertyShape;
+  sh:path ldes:timestampPath;
+  sh:maxCount 1;
+  sh:severity sh:Violation;
+  sh:name "LDES timestampPath";
+  sh:description "The path to the xsd:dateTime literal in each member that defines the order of the event stream";
+  sh:message "LPER-07 (ldes:timestampPath usage) - an event stream MUST NOT include multiple ldes:timestampPath properties" .

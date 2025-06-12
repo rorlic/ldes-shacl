@@ -4,7 +4,7 @@ import {
 } from './utilities';
 
 describe('Test LPER-02 (not double-typed)', async () => {
-  const validator = await createValidator(['ldes-shapes.ttl']);
+  const validator = await createValidator(['ldes-common.ttl', 'ldes-LPER-02-not-double-typed.ttl']);
   const nodeShape = 'https://w3id.org/ldes#EventStreamDoubleTypeShape';
   const focusNode = 'http://example.org/EventStream1';
 

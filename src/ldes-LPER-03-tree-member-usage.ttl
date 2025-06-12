@@ -1,0 +1,14 @@
+@prefix ldes: <https://w3id.org/ldes#>.
+@prefix tree: <https://w3id.org/tree#>.
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+
+tree:CollectionMemberNodeKindShape sh:deactivated true .
+
+ldes:EventClassStreamShape sh:property ldes:EventStreamMemberNodeKindShape .
+
+ldes:EventStreamMemberNodeKindShape a sh:PropertyShape;
+  sh:path tree:member;
+  sh:nodeKind sh:IRI;
+  sh:name "TREE member";
+  sh:description "Links to the collection’s items that are the sh:targetNodes of the SHACL shape defined with tree:shape";
+  sh:message "LPER-03 (tree:member usage) - an event stream MUST refer using its tree:member property to a member's focus node (by a named node)" .
