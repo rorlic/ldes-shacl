@@ -56,11 +56,11 @@ enum Severity {
   information = 'http://www.w3.org/ns/shacl#Info',
 }
 
-// function logResult(report: ValidationReport) {
-//   console.log(report.results.map((x: ValidationResult) => (
-//     {severity: x.severity.value, source: x.sourceShape?.value, node: x.focusNode?.value, path: x.path, value: x.value?.value, constraint: x.sourceConstraintComponent?.value}
-//   )))
-// }
+export function logResult(report: ValidationReport) {
+  console.log(report.results.map((x: ValidationResult) => (
+    {severity: x.severity.value, source: x.sourceShape?.value, node: x.focusNode?.value, path: x.path, value: x.value?.value, constraint: x.sourceConstraintComponent?.value}
+  )))
+}
 
 export function expectViolation(expectedResult: ExpectedResult, report: ValidationReport, count: number = 1) {
 // logResult(report);

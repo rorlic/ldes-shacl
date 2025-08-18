@@ -1,8 +1,0 @@
-ldes-common.ttl
-
-ldes-LPER-01-contains-ldes-EventStream.ttl
-ldes-LPER-02-not-double-typed.ttl
-ldes-LPER-03-tree-member-usage.ttl
-ldes-LPER-04-tree-shape-usage.ttl
-ldes-LPER-06-ldes-versionOfPath-usage.ttl
-ldes-LPER-07-ldes-timestampPath-usage.ttl

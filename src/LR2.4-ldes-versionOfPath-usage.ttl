@@ -1,15 +1,15 @@
 @prefix ldes: <https://w3id.org/ldes#>.
 @prefix sh:   <http://www.w3.org/ns/shacl#> .
 
-ldes:EventClassStreamShape sh:property ldes:EventStreamVersionOfPathSuggestedShape, ldes:EventStreamVersionOfPathLimitedShape .
+ldes:EventStreamClassShape sh:property ldes:EventStreamVersionOfPathSuggestedShape, ldes:EventStreamVersionOfPathLimitedShape .
 
 ldes:EventStreamVersionOfPathSuggestedShape a sh:PropertyShape;
   sh:path ldes:versionOfPath;
   sh:minCount 1;
   sh:name "LDES versionOfPath";
   sh:description "The path to the IRI in each member that defines the entity of which this member is a version";
-  sh:severity sh:Info;
-  sh:message "LPER-06 (ldes:versionOfPath usage) - an event stream MAY include a ldes:versionOfPath property to specify the (non-version) object for which the member is a version of" .
+  sh:severity sh:Warning;
+  sh:message "LR2.4 - an event stream SHOULD include a ldes:versionOfPath property to specify the entity for which the member is a version of" .
 
 ldes:EventStreamVersionOfPathLimitedShape a sh:PropertyShape;
   sh:path ldes:versionOfPath;
@@ -17,4 +17,4 @@ ldes:EventStreamVersionOfPathLimitedShape a sh:PropertyShape;
   sh:severity sh:Violation;
   sh:name "LDES versionOfPath";
   sh:description "The path to the IRI in each member that defines the entity of which this member is a version";
-  sh:message "LPER-06 (ldes:versionOfPath usage) - an event stream MUST NOT include multiple ldes:versionOfPath properties" .
+  sh:message "LR2.4 - an event stream MUST NOT include multiple ldes:versionOfPath properties" .

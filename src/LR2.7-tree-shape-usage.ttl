@@ -4,7 +4,7 @@
 
 tree:CollectionShapeSuggestedShape sh:deactivated true .
 
-ldes:EventClassStreamShape sh:property ldes:EventStreamShapeRecommendedShape .
+ldes:EventStreamClassShape sh:property ldes:EventStreamShapeRecommendedShape .
 
 ldes:EventStreamShapeRecommendedShape a sh:PropertyShape;
   sh:path tree:shape;
@@ -12,4 +12,4 @@ ldes:EventStreamShapeRecommendedShape a sh:PropertyShape;
   sh:name "TREE (shacl) shape";
   sh:description "The SHACL shape the members of the collection adhere to";
   sh:severity sh:Warning;
-  sh:message "LPER-04 (tree:shape usage) - an event stream SHOULD refer using its tree:shape property to a shape defining its members" .
+  sh:message "LR2.7 - an event stream SHOULD refer using its tree:shape property to a shape defining its members" .

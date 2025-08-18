@@ -1,0 +1,32 @@
+@prefix tree: <https://w3id.org/tree#>.
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix ldes: <https://w3id.org/ldes#>.
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ldes:TreeViewObjectShape sh:property 
+  ldes:RetentionPolicySuggestedShape, ldes:RetentionPolicyInvalidShape, ldes:RetentionPolicyPreferredShape .
+
+ldes:RetentionPolicySuggestedShape a sh:PropertyShape;
+  sh:path ([sh:zeroOrOnePath tree:viewDescription] ldes:retentionPolicy);
+  sh:minCount 1; 
+  sh:severity sh:Warning;
+  sh:name "Node LDES retention policy";
+  sh:description "Links to a retention policy.";
+  sh:message "LR2.8 - a root node SHOULD contain a `ldes:retentionPolicy`, preferably on the root node, alternatively on the root node's `tree:viewDescription`" .
+
+ldes:RetentionPolicyInvalidShape a sh:PropertyShape;
+  sh:path ([sh:zeroOrOnePath tree:viewDescription] ldes:retentionPolicy);
+  sh:maxCount 1;
+  sh:nodeKind sh:BlankNodeOrIRI ;
+  sh:name "Node LDES retention policy";
+  sh:description "Links together any HTTP response with a view description on which things like retention policies, contact information of a server, etc. can be found.";
+  sh:message "LR2.8 - a root node SHOULD contain a `ldes:retentionPolicy`, preferably on the root node, alternatively on the root node's `tree:viewDescription`" .
+
+ldes:RetentionPolicyPreferredShape a sh:PropertyShape;
+  sh:path (tree:viewDescription ldes:retentionPolicy);
+  sh:maxCount 0; 
+  sh:severity sh:Info;
+  sh:name "Node LDES retention policy";
+  sh:description "Links to a retention policy.";
+  sh:message "LR2.8 - a root node SHOULD contain a `ldes:retentionPolicy`, preferably on the root node, alternatively on the root node's `tree:viewDescription`" .

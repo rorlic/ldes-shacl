@@ -1,0 +1,9 @@
+ldes-common.ttl
+LR2.1-contains-ldes-EventStream.ttl
+LR2.2-ldes-timestampPath-usage.ttl
+LR2.3-ldes-sequencePath-usage.ttl
+LR2.4-ldes-versionOfPath-usage.ttl
+LR2.5-ldes-versionTimestampPath-usage.ttl
+LR2.6-ldes-versionSequencePath-usage.ttl
+LR2.7-tree-shape-usage.ttl
+LR2.9-tree-member-usage.ttl
