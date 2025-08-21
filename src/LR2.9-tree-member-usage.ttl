@@ -4,11 +4,11 @@
 
 tree:CollectionMemberNodeKindShape sh:deactivated true .
 
-ldes:EventClassStreamShape sh:property ldes:EventStreamMemberNodeKindShape .
+ldes:EventStreamClassShape sh:property ldes:EventStreamMemberNodeKindShape .
 
 ldes:EventStreamMemberNodeKindShape a sh:PropertyShape;
   sh:path tree:member;
   sh:nodeKind sh:IRI;
   sh:name "TREE member";
   sh:description "Links to the collection’s items that are the sh:targetNodes of the SHACL shape defined with tree:shape";
-  sh:message "LPER-03 (tree:member usage) - an event stream MUST refer using its tree:member property to a member's focus node (by a named node)" .
+  sh:message "LR2.9 - an event stream MUST refer using its tree:member property to a member's focus node, which MUST be an IRI" .

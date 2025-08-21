@@ -1,0 +1,20 @@
+@prefix ldes: <https://w3id.org/ldes#>.
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+
+ldes:EventStreamClassShape sh:property ldes:EventStreamVersionSequencePathSuggestedShape, ldes:EventStreamVersionSequencePathLimitedShape .
+
+ldes:EventStreamVersionSequencePathSuggestedShape a sh:PropertyShape;
+  sh:path ldes:versionSequencePath;
+  sh:minCount 1;
+  sh:name "LDES versionSequencePath";
+  sh:description "The alternative path to the IRI in each member that defines the order of the versions of the same entity";
+  sh:severity sh:Info;
+  sh:message "LR2.6 - an event stream MAY contain a ldes:versionSequencePath to indicate the relative order of entities with the same ldes:versionTimestampPath" .
+
+ldes:EventStreamVersionSequencePathLimitedShape a sh:PropertyShape;
+  sh:path ldes:versionSequencePath;
+  sh:maxCount 1;
+  sh:severity sh:Violation;
+  sh:name "LDES versionSequencePath";
+  sh:description "The alternative path to the IRI in each member that defines the order of the versions of the same entity";
+  sh:message "LR2.6 - an event stream MUST NOT include multiple ldes:versionSequencePath properties" .

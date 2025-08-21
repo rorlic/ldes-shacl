@@ -1,0 +1,6 @@
+@prefix ex:   <http://example.org/> .
+@prefix ldes: <https://w3id.org/ldes#>.
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+
+ex:EventStream1 a ldes:EventStream ;
+  ldes:sequencePath ex:something, [sh:alternativePath ex:somethingElse] .

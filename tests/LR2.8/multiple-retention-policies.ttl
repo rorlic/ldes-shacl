@@ -1,0 +1,8 @@
+@prefix ldes: <https://w3id.org/ldes#>.
+@prefix tree: <https://w3id.org/tree#>.
+@prefix ex:   <http://example.org/> .
+
+ex:eventStream1 tree:view ex:view1 .
+
+ex:view1 a tree:Node, ldes:EventSource ;
+  ldes:retentionPolicy [], [] .

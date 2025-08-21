@@ -18,4 +18,18 @@ ldes:EventStreamTypeRequiredShape a sh:PropertyShape;
   sh:maxCount 1 ;
   sh:name "LDES count";
   sh:description "A shape to validate that an ldes:EventStream only appears once in a LDES page.";
-  sh:message "LPER-01 (contains ldes:EventStream) - an event stream MUST be a ldes:EventStream" .
+  sh:message "LR2.1 - an event stream MUST be a ldes:EventStream" .
+
+ldes:EventStreamDoubleTypeShape a sh:NodeShape;
+  sh:targetClass ldes:EventStream ;
+  rdfs:label "EventStream class shape"@en ;
+  rdfs:comment "A shape verifying that an ldes:EventStream is not double-typed in an LDES page."@en ;
+  sh:severity sh:Warning;
+  sh:not ldes:CollectionTypeSpecifiedShape.
+  
+ldes:CollectionTypeSpecifiedShape a sh:PropertyShape;
+  sh:path rdf:type ;
+  sh:hasValue tree:Collection; 
+  sh:name "LDES double-typed";
+  sh:description "A shape to validate that an ldes:EventStream is not double-typed with its base class tree:Collection .";
+  sh:message "LR2.1 - an event stream SHOULD NOT be double typed with tree:Collection" .

@@ -2,10 +2,16 @@
 @prefix sh:   <http://www.w3.org/ns/shacl#> .
 @prefix owl:  <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tree: <https://w3id.org/tree#>.
 
 ldes: owl:imports <https://w3id.org/ldes#Vocabulary> .
 
-ldes:EventClassStreamShape a sh:NodeShape; 
+ldes:EventStreamClassShape a sh:NodeShape; 
   sh:targetClass ldes:EventStream ;
   rdfs:label "EventStream class shape"@en ;
   rdfs:comment "A shape describing well-formed LDES collections."@en .
+
+ldes:TreeViewObjectShape a sh:NodeShape; 
+  sh:targetObjectsOf tree:view ;
+  rdfs:label "View shape"@en ;
+  rdfs:comment "A shape describing well-formed LDES views."@en .
