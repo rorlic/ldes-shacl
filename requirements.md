@@ -1,4 +1,4 @@
-# TREE Requirements
+# LDES Requirements
 > [!CAUTION]
 > This is still work in progress.
 
@@ -57,14 +57,11 @@ See the [TREE Requirements definitions](https://github.com/rorlic/tree-shacl/blo
 
 ---
 
-## OLD stuff
-> [!IMPORTANT]
-> * add more root node requirements
-> * add more subsequent node requirements
-> * fetch: get LDES by URL, check tree:Node exists or, if absent must have tree:view that should be dereferenced
+## TO BE REVIEWED
 
 > [!WARNING]
-> Note that anything beyond this point is currently under discussion.
+> Note that anything beyond this point may have changed or may change in the near future.
+> Requirements below will gradually be revised and migrated to the new structure above and renumbered.
 
 ### Fragmentation Requirements (LPFR)
 1. if an event stream is too big to fit in one HTTP Response, it MUST be partitioned using [TREE pages](../tree/README.md#page-requirements-tppr)
